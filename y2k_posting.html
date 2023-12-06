@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<!-- Original Theme by JAZZatkin --  Modified by DaX
+|          https://jazzatkin.com | @JAZZatkin
+-->
+<html>
+    <!-- HEAD -->
+    <head>
+    
+        <!-- Pop-up Box Shows Once Upon Entry -->
+        <!-- Nothing is here yet!-->
+        <!-- End Pop-up Box -->
+
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <!-- Background -->
+        <meta name="color:Primary" content="#f0d6db"/>
+        <!-- Border, Box Around Tag & Notes -->
+        <meta name="color:Secondary" content="#EC6C8C"/>
+        <!-- Top & Bottom Bar Color -->
+        <meta name="color:Tertiary" content="#DBD5E8"/>
+        <!-- Unused -->
+        <meta name="color:Quaternary" content="#dbb2f1"/>
+        <!-- Unused - Icons Currently Secondary -->
+        <meta name="color:Icons" content="#f0d6db"/>
+        <!-- Unused -->
+        <meta name="color:Text" content="#f0d6db"/>
+        <!-- Unused -->
+        <meta name="color:Hover" content="#f0d6db"/>
+        <!-- Post Background Color -->
+        <meta name="color:Post" content="#FBE9EC"/>
+        <!-- Unused -->
+        <meta name="color:TEST" content="#ff0000"/>
+        <!-- Dash Background -->
+        <meta name="image:Background" content="https://i.pinimg.com/originals/fd/f6/ab/fdf6abae016384409b8d6be8e1fab844.jpg"/>
+        <!-- Posts Background -->
+        <meta name="image:Post" content="https://cutewallpaper.org/22x/0nkygmvec/1241611949.jpg"/>
+        <!-- Sidebar Background -->
+        <meta name="image:SidebarBG" content="https://tinyurl.com/bddak4pu"/>
+        <meta name="image:portrait" content="{PortraitURL-128}" />
+        <meta name="if:Infinite Scroll" content="1">
+        <meta name="if:Tags on Homepage" content="1" />
+        <meta name="text:Facebook Link" content="">
+        <meta name="text:Instagram Handle" content="">
+        <meta name="text:Twitter Handle" content="">
+        <meta name="text:YouTube URL" content="">
+        <meta name="if:Archive Link" content="1" />
+        <meta name="if:Ask Link" content="1" />
+        <meta name="text:Custom Link 1 Title" content="Custom Link 1">
+        <meta name="text:Custom Link 1 URL" content="">
+        <meta name="text:Custom Link 2 Title" content="Custom Link 2">
+        <meta name="text:Custom Link 2 URL" content="">
+        <meta name="text:Custom Link 3 Title" content="Custom Link 3">
+        <meta name="text:Custom Link 3 URL" content="">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata|Playfair+Display:900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mynerve&family=Nanum+Pen+Script&family=Patrick+Hand&display=swap" rel="stylesheet">
+        
+        <script type="text/javascript" src="https://kit.fontawesome.com/b312a140ee.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+        
+        <script>
+            $(document).ready(function() {
+                var a = 3;
+                $( ".draggable" ).draggable({
+                    start: function(event, ui) { $(this).css("z-index", a++); }
+                });
+                $('.container').mousedown(function() {
+                    $(this).addClass('top').removeClass('bottom');
+                    $(this).siblings().removeClass('top').addClass('bottom');
+                    $(this).css("z-index", a++);
+                });
+            });
+        </script>
+
+        <!-- Cursor -->
+        <style type="text/css">* {
+            cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat996.cur), auto !important;
+            }</style>
+        <a href="https://www.cursors-4u.com/cursor/2011/12/29/tiny-star.html" target="_blank" title="Tiny Star">
+        <img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Tiny Star" style="position:absolute; top: 0px; right: 0px;" />
+        </a>
+        <!-- End Cursor -->
+
+        <style type="text/css">
+            html, body {
+                margin:0;
+                padding-top:35px;
+                padding-bottom:35px;
+                background-color: {color:Primary};
+                background-image: url({image:Background});
+                background-repeat: repeat;
+                background-attachment: fixed;
+                background-position: 100% 100%
+                font-size: 12px;
+                line-height: 1.4em;
+            }
+            body {
+                text-shadow: rgba(0,0,0,.01) 0 0 1px;
+                font-family: 'Inconsolata', sans-serif;
+            }
+            #sidebar {
+                background-image: url({image:SidebarBG});
+                width: 472px;
+                height: 403px;
+                position: fixed;
+                top: 20px;
+                left: 5px;
+            }
+            .blogtitle {
+                position: absolute;
+                flex-grow: 1;
+                overflow: auto;
+                font-family: 'Nanum Pen Script', cursive;
+                text-shadow: rgba(100, 75, 220, 0.75) 1 1 8px;
+                font-size: 40px;
+                text-align: center;
+                padding: 10px;
+                top: 50px;
+                left: 65px;
+                width: 363px;
+            }
+            .portrait {
+                position: absolute;
+                box-shadow: rgba(100, 75, 220, 0.75) 0 0 8px;
+                top: 100px;
+                left: 220px;
+                width: auto;
+            }
+            .about {
+                position: absolute;
+                overflow: auto;
+                /*background: rgba(238, 130, 238, 0.3);*/
+                font-family: 'Patrick Hand', cursive;
+                text-shadow: rgba(106, 90, 205, 0.6) 0 0 2px;
+                color: {color:Primary};
+                font-size: 18px;
+                text-align: justify;
+                padding:10px;
+                top: 160px;
+                left: 65px;
+                height: 130px;
+                width: 363px;
+            }
+            /* Navigation at Bottom of Page */
+            nav#nav {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+                background-color: {color:Tertiary};
+                border-top: 2px solid {color:Secondary};
+                z-index: 200;
+                
+            }
+            nav#nav ul {
+                list-style-type:none;
+                padding: 5px;
+                margin: 0;
+                height: 30px;
+            }
+            nav#nav ul li {
+                float: left;
+                padding: 0;
+                margin: 0;
+                height: 30px;
+            }
+            /* Text & Borders */
+            nav#nav ul li a {
+                font-size: 12px;
+                line-height: 24px;
+                height: 28px;
+                padding: 0px 20px;
+                border: 2px solid {color:Secondary};
+                color: {color:Secondary};
+                box-sizing: border-box;
+                display: inline-block;
+                margin-right: 5px;
+                text-transform: uppercase;
+            }
+            nav#nav ul li a:hover, nav#nav ul li a.selected {
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+            }  
+            /* Post Structure */
+            .wrapper {
+                width: 100%;
+                overflow: hidden;
+                margin: 0px 0px 0px 0px;
+            }
+            ul.posts {
+                list-style: none;
+                text-align: center;
+                padding: 0px !important;
+                margin: 0px auto;
+                margin-right: 75px;/*Find*/
+                {block:IndexPage}
+                    width: 1090px;
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                    width: calc(100% - 80px);
+                    max-width: 700px;
+                    height: fit-content;
+                    display: flex;
+                {/block:PermalinkPage}
+            }
+            @media screen and (max-width:1490px) {
+                html, body {
+                    padding:0;
+                    padding-left:175px;
+                }
+                ul.posts{
+                    width: 720px;
+                }
+            }
+             @media screen and (max-width:920px) {
+                ul.posts {
+                    width: calc(100% - 200px);
+                    {block:PermalinkPage}
+                    flex-direction: column;
+                    {/block:PermalinkPage}
+                }
+            }
+             @media screen and (max-width:700px) {
+                 ul.posts {
+                    width: calc(100% - 60px);
+                    position: static !important;
+                    height: auto !important;
+                    overflow: hidden;
+                }
+            }
+            ul.posts li.post {
+                position: relative;
+                padding: 0;
+                text-align: left;
+                width: 350px;
+                margin: 5px;
+                float: left;
+                border: 2px solid {color:Secondary};
+                box-sizing: border-box;
+                background-color: {color:Post};
+                background-image: url({image:Post});
+            }
+            ul.posts li.post.about {
+                border-bottom: 0;
+            }
+            @media screen and (max-width:920px) {
+                ul.posts li.post{
+                    position: static !important;
+                    width: 100% !important;
+                    margin: 0 0 5px 0;
+                    }
+            }
+            ul.posts li.post.full, ul.posts li.post.notes {
+                flex-grow: 1;
+                max-height: calc(100vh - 40px) !important;
+                z-index: 5000;
+                display: flex;
+                margin: 0 auto;
+                flex-direction: column;
+                align-self:flex-start;
+            }
+            @media screen and (max-width:920px) {
+                ul.posts li.post.full, ul.posts li.post.notes{
+                    width: 100% !important;
+                    height: unset;
+                    overflow: hidden;
+                    margin: 5px 0px !important;
+                    flex-grow: 1 !important;
+                    max-height: unset !important;
+                }
+            }
+            .postControls {
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+                background-color: {color:Tertiary};
+                border-bottom: 2px solid {color:Secondary};
+                display: flex;
+                min-height: 30px;
+            }
+            .postInner {
+                position: relative;
+            }
+            {block:PermalinkPage}
+            .postInner {
+                overflow-y: scroll !important;
+                height: 600px;
+                overflow: hidden;
+            }
+            {/block:PermalinkPage}
+            /* Regular Post Date */
+            .date {
+                flex-grow: 1;
+                font-size: 12px;
+                line-height: 20px;
+                text-transform: uppercase;
+                color: {color:Secondary};
+                border: 0;
+            }
+            /* Controls Title & Detailed Notes
+            I'm not a fan of this setup. See static sidebar! */
+            .date a {
+                font-size: 25px;
+                color: {color:Secondary};
+               /* text-decoration: underline overline;*/
+                padding: 5;
+                border: 5;
+            }
+            .date a:hover{
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+            }
+            /* Upper Right Hand Controls */
+            .postControls .fullControl, .postControls .closeControl {
+                width: 20px;
+                height: 20px;
+                border: 2px solid {color:Secondary};
+                line-height: 16px;
+                font-size: 12px;
+                text-align: center;
+                color: {color:Secondary};
+                margin-left: 5px;
+                display: inline-block;
+                box-sizing: border-box;
+            }
+            .postControls .fullControl:hover, .postControls .closeControl:hover{
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+                border: 2px solid {color:Secondary};
+            }
+            /* Basics */
+            ::-webkit-scrollbar {
+                width: 10px;
+                position: fixed;
+                right: 12px;
+            }
+            ::-webkit-scrollbar-track {
+                box-shadow: 0;
+                border-radius: 0px;
+                background-color: {color:Tertiary};
+            }
+            .post ::-webkit-scrollbar-track {
+                border-left: 0px solid {color:Secondary};
+            }
+            ::-webkit-scrollbar-thumb {
+                background: {color:Secondary};
+                border-radius: 0px;
+            }
+            .hidden {
+                display: none;
+            }
+            figure img {
+                width: 100% !important;
+                height: auto !important;
+                margin-top: 5px;
+		    }
+		       
+		    a {
+                color: {color:Secondary};
+                text-decoration: none;
+            }
+            a:hover {
+                color: {color:Tertiary};
+            }
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            p+p{ 
+                padding-top: 5px;
+            }
+            figure + p {
+                padding-top: 5px;
+            }
+            p + figure {
+                padding-top: 5px !important;
+            }
+            img {
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+            blockquote {
+                   margin: 5px 0px 5px 20px;
+            }
+            .draggable { 
+	            z-index: 2;
+            }
+            /* Posts, General */
+            .postContent {
+                width: 100%;
+                overflow: hidden;
+                box-sizing: border-box;
+                padding: 5px;
+            }
+            .postContent.hide {
+                padding: 0px;
+            }
+            .postContent.hide p {
+                display: block;
+                padding: 5px;
+            }
+            .postContent.hide p:last-child {
+                border-bottom: 2px solid {color:Secondary};
+            }
+            .postContent.hide p span:empty {
+                padding: 0px;
+                border: 0;
+            }
+            .postContent a {
+                padding: 1px;
+                border-bottom: 1px solid {color:Secondary};
+            }
+            .postContent a:hover {
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+            }
+            .tagContainer, .meta {
+                width: 100%;
+                overflow: hidden;
+                padding: 5px;
+                box-sizing: border-box;
+                background-color: {color:Tertiary};
+                border-top: 2px solid {color:Secondary};
+                font-size: 12px;
+            }
+            ul.tags {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            /* Nixed this guy */
+            ul.tags li {
+                display: inline-grid;
+                margin-right: 5px;
+            }
+            /* Use instead */
+            ul.tags a, .perma a {
+                display: inline-grid;
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+                text-transform: full-width;
+            }
+            ul.tags a:hover, .perma a:hover {
+                text-decoration-line: underline overline;
+                background-color: {color:Tertiary};
+                color: {color:Secondary};
+            }
+            /* Find Again */
+            ul.tags li a, .perma a, .notecount a {
+                display: inline-grid;
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+                text-transform: full-width;
+            }
+            ul.tags li a:hover, .perma a:hover, .notecount a:hover {
+                /*text-decoration-line: underline overline;*/
+                background-color: {color:Tertiary};
+                color: {color:Secondary};
+            }
+            .desktopLinks {
+                position: fixed;
+                top: 425px;
+                left: 20px;
+                z-index: 1;
+                width: 60px;
+                overflow: hidden;
+                text-align: center;
+            }
+            @media screen and (max-width:700px) {
+                .desktopLinks{
+                    position: static;
+                    width: 100%;
+                    padding: 0 40px 30px 40px;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: center;
+                    }
+            }
+            .desktopLink {
+                width: 100%;
+                overflow: hidden;
+                display: block;
+                padding: 0px 1px;
+                margin: 0 0 10px 0;
+                border: 0;
+                font-size: 30px;
+                line-height: 30px;
+                word-wrap: break-word;
+            }
+            @media screen and (max-width:700px) {
+                .desktopLink{
+                    width: unset;
+                    display: inline-block;
+                    font-size: 25px;
+                    line-height: 25px;
+                    text-align: center;
+                    padding: 0px 1px;
+                    margin: 0 0 10px 10px;
+                }
+                .desktopLink:first-child {
+                    margin: 0 0 10px 0;
+                }
+                .desktopTitle {
+                    display: none;
+                }
+            }
+            .desktopLink p.desktopTitle{ 
+                font-size: 12px;
+                line-height: 12px;
+                margin-top: 5px;
+            }
+            .desktopLink:hover {
+                color: #FFF;
+                padding: 0px 1px;
+                border: 0;
+            }
+
+            /* Text Posts */
+            h1, h2 {
+                font-size: 12px;
+                padding: 0 0 5px 0;
+                margin: 0;
+            }
+            h3 {
+                padding: 0;
+                margin: 0;
+                font-size: 12px;
+                width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+                line-height: 22px;
+                background-color: {color:Tertiary};
+                color: {color:Secondary};
+                border-bottom: 2px solid {color:Secondary};
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+            .text h3 a:hover {
+                background-color: {color:Secondary};
+                color: {color:Primary};
+            }
+            /* Photo Post */
+            .photosetContainer {
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .photoset img {
+                    width: 100% important;
+                    height: auto !important;
+                    display: block;
+            }
+            /* Video Posts */
+            .videoWrapper {
+                position: relative;
+                padding-bottom: 50%;
+                padding-top: 25px;
+                height: 0;
+            }
+            .videoWrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            /* Audio Posts */
+            .audio iframe {
+                width: 100% !important;
+                display: block;
+            }
+            /* Link Posts */
+            .linkThumb {
+                width: 100%;
+                height: auto;
+                border-bottom: 2px solid {color:Secondary};
+            }
+            .linkHost, .linkTitle {
+                width: 100%;
+                border-bottom: 2px solid {color:Secondary};
+                display: block;
+                background-color: {color:Tertiary};
+                padding: 5px;
+                box-sizing: border-box;
+                text-transform: uppercase;
+            }
+            .linkHost:hover, .linkTitle:hover {
+                background-color: {color:Secondary};
+                color: {color:Tertiary};
+                border-bottom: 2px solid {color:Secondary};
+            } 
+            /* Answer Posts */
+            .questionContainer { 
+                padding: 5px;
+                border-bottom: 2px solid {color:Secondary};
+            }
+            .answerContainer {
+                padding: 5px;
+            }
+            .answererContainer + p {
+                display: inline;
+            }
+            .askerContainer, .answererContainer{
+                color: {color:Secondary};
+                text-transform: uppercase;
+            } 
+            .asker:hover, .answerer:hover{
+                background-color: {color:Secondary};
+                color: {color:Primary};
+            }
+            .replies{
+                padding: 5px;
+            }
+            .answerContainer+.replies{
+                border-top: 2px solid {color:Secondary};
+            }
+            .replies:empty{
+                display: none;
+            }
+            /* Chat Posts */
+            ul#chat{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            ul#chat li{
+                margin: 0;
+                padding: 5px;
+                border-top: 2px solid {color:Secondary};
+            }
+            ul#chat li:first-child { 
+                border-top: 0px solid #FFF; 
+            } 
+            ul#chat li span.label{
+                color: {color:Secondary};
+            }
+            /* Pagination */
+            .pagination{
+                position: fixed;
+                bottom: 50px;
+                right: 20px;
+                z-index: 1;
+                width: 60px;
+                overflow: hidden;
+                text-align: center;
+            }
+             @media screen and (max-width:700px){
+                .pagination{
+                    position: static;
+                    padding: 0px 40px;
+                    margin: 40px 0 0 0;
+                    width: 100%;
+                    box-sizing: border-box;
+                    text-align: right;
+                    display: flex;
+                    justify-content: center;
+                }
+                .pagination .desktopLink{
+                    float: right;
+                }
+            }
+            /* Notes */
+            ul.posts li.post.notes{
+                width: 30%;
+                flex-grow: 0;
+                margin-left: 10px;
+            }  
+            ol.notes {
+                list-style-type: none;
+                font-weight: 300;
+                padding: 5px;
+            }
+            ol.notes li.note {
+                padding-top: 5px;
+                font-size: 12px;
+            }
+                ol.notes li.note:first-child {
+                    padding-top: 0px;
+            }
+            ol.notes li.note a{
+                color: {color:Secondary};
+                text-decoration: none;
+                font-weight: normal;
+            }
+            ol.notes li.note a:hover{
+                background-color: {color:Secondary};
+                color: {color:Primary};
+            }
+            ol.notes li.note img.avatar {
+                margin-right: 10px;
+                width: 16px;
+                height: 16px;
+            }
+            ol.notes li.note span.action {
+                font-weight: normal;
+            }
+            ol.notes li.note .answer_content {
+                font-weight: normal;
+            }
+            ol.notes li.note blockquote a {
+                text-decoration: blink;
+            }
+            .note.more_notes_link_container{
+                margin-top: 0px;
+                text-align: left !important;
+                font-size: 12px !important;
+                padding-bottom: 0px;
+                overflow-y: scroll !important;
+            }
+            .note.more_notes_link_container a, a.more_notes_link, .notes_loading{
+                text-decoration: none;
+                padding: 1px !important;
+                margin: 0;
+                border: 0 !important;
+                background-color: {color:Secondary}; !important;
+                color: {color:Primary} !important;
+                font-weight: normal !important;
+                font-family: 'Inconsolata', sans-serif;
+                text-align: left !important;
+                font-size: 12px; !important;
+                text-transform: uppercase;
+            }
+            a.more_notes_link:hover{
+                color: {color:Secondary} !important;
+                background-color: {color:Primary} !important;
+                border-bottom:0;
+            }
+            .clearfix:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content: " ";
+                clear: both;
+                height: 0;
+            }
+            .clearfix { display: inline-block; }
+            /* start commented backslash hack \*/
+            * html .clearfix { height: 1%; }
+            .clearfix { display: block; }
+            /* close commented backslash hack */
+
+            {CustomCSS}
+            #loading{
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                position: fixed;
+                z-index: 5000;
+                background-color: {color:Primary};
+                color: {color:Secondary};
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                flex-wrap: wrap;
+                font-size: 30px;
+            {block:PermalinkPage}
+            display: none;
+            {/block:PermalinkPage}
+            } 
+            #loading p {
+                font-size: 14px;
+                text-align: center;
+                display: block;
+                clear: left;
+                margin-top: 10px;
+            }
+            .loaderTwo {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                color: {color:Primary};
+                background-color: {color:Secondary};
+                display: none;
+            }
+            figure video {
+                max-width: 100% !important;
+            }
+        </style> 
+    </head> 
+    
+    <!-- BODY -->
+    <body>
+        <div class="wrapper">
+            <div id="loading">
+                <i class="fa-solid fa-cookie-bite fa-spin"></i>
+                <p>( ⸝⸝•ᴗ•⸝⸝ )੭⁾⁾</p>
+            </div>
+            
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a class="navLink" href="{BlogURL}">HOME</a>
+                    </li>
+
+                    {block:IfAskLink}
+                        <li>
+                            <a class="navLink ask" href="/ask">
+                                Ask
+                            </a>
+                        </li>
+                    {/block:IfAskLink}
+
+                    {block:IfArchiveLink}
+                        <li>
+                            <a class="navLink archive" href="/archive">
+                                Archive
+                            </a>
+                        </li>
+                    {/block:IfArchiveLink}
+
+                    {block:IfCustomLink1URL}
+                        <li>
+                            <a href="{text:Custom Link 1 URL}"}>
+                                {text:Custom Link 1 Title}
+                            </a>
+                        </li>
+                    {/block:IfCustomLink1URL}
+
+                    {block:IfCustomLink2URL}
+                        <li>
+                            <a href="{text:Custom Link 2 URL}">
+                                {text:Custom Link 2 Title}
+                            </a>
+                        </li>
+                    {/block:IfCustomLink2URL}
+
+                    {block:IfCustomLink3URL}
+                        <li>
+                            <a href="{text:Custom Link 3 URL}">
+                                {text:Custom Link 3 Title}
+                            </a>
+                        </li>
+                    {/block:IfCustomLink3URL}   
+                </ul>
+            </nav>
+            <!-- END NAV -->
+
+        </div>
+        <!-- End Wrapper -->
+
+        <div id="sidebar">
+            <div class="blogtitle">
+                <a href="/">
+                    {Title}
+                </a>
+            </div>
+            
+            <div class="portrait">
+                <img src="{PortraitURL-128}" width="60" height="60">
+            </div>
+            
+            <div class="about">{Description}</div>
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="desktopLinks">
+            <!-- Originally included an icon that links back to blog home --
+            This seems like overkill, as we already have two other things that do this:
+                [1] Blog Title in Sidebar
+                [2] The [X] at the top of posts
+            Adding a THIRD thing just feels cluttered and confusing. We don't need to add to the overall visual noise on the page.
+        
+            THOUGHTS: We shouldn't even be displaying the [X] unless we've clicked onto an individual post. [X] reads as "close" or "return back to main page" and that reads confusingly when EVERY reblogged post on the main scrolling page contains an [X].
+            It looks like it ought to remove individual posts from the scrolling page.
+            WE MIGHT WANT TO:
+                * Change the buttons on each post on main page to be -
+                    [<3] Like the post
+                    [<>] Reblog the post
+                    [<=>] Click to individual post to see notes
+                * Change post in "notes" view to have buttons:
+                    [<3] Like the post
+                    [<>] Reblog the post
+                    [X] Close post and return to blog home
+                * Add icon that returns you to YOUR dashboard??
+                    [!] Tumblr does seem to provide this natively in the upper right
+            -->
+            <!--<a class="desktopLink" href="{BlogURL}"><i class="fas fa-face-grin-hearts"></i><p class="desktopTitle">{Title}</p>
+            </a> -->
+
+            <a class="desktopLink" href="https://www.tumblr.com/theme/40954" target="_blank">
+                <i class="fa-solid fa-code"></i>
+                <p class="desktopTitle">Theme Modified by DaX</p>
+            </a>
+            <!-- Optional Desktop Links -->
+            {block:IfInstagramHandle}
+                <a class="desktopLink" href="https://instagram.com/{text:Instagram Handle}" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <p class="desktopTitle">@{text:Instagram Handle}</p>
+                </a>
+            {/block:IfInstagramHandle}
+            
+            {block:IfTwitterHandle}
+                <a class="desktopLink" href="https://twitter.com/{text:Twitter Handle}" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <p class="desktopTitle">@{text:Twitter Handle}</p>
+                </a>
+            {block:IfTwitterHandle}
+            
+            {block:IfYouTubeURL}
+                <a class="desktopLink" href="{text:YouTube URL}" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <p class="desktopTitle">YouTube</p>
+                </a>
+            {/block:IfYouTubeURL}
+            
+            {block:HasPages}
+                {block:Pages} 
+                    <a class="desktopLink" href="{URL}" target="_blank">
+                        <i class="far fa-folder"></i>
+                    <p class="desktopTitle">{Label}</p>
+                    </a>
+                {/block:Pages}
+            {/block:HasPages}        
+        </div>
+        <!-- End DesktopLinks-->
+       
+        <ul class="posts container">
+            <!-- Removed static ABOUT box BECAUSE:
+                    It blended in too much with the blog posts, and did not stay stationary.
+                I added a much more aesthetically pleasing sidebar with a background. Sidebar is STATIC. 
+            -->
+            <!-- {block:IndexPage}
+            <li class="post about">     
+                <div class="postControls">
+                    <div class="date">
+                       <a href="{BlogURL}">{Title}</a>
+                    </div>
+                    <a  class="fullControl" href="#">
+                        <i class="fas fa-arrows-alt"></i>
+                    </a>
+                    <a class="closeControl closeButton" href="#">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+                <div class="postContent hide">
+                    <p>{Description}</p>
+                </div>
+            </li>
+            {/block:IndexPage} -->
+            
+            {block:Posts}
+                <li class="post main {block:IndexPage}draggable{/block:IndexPage} {block:PermalinkPage}full{/block:PermalinkPage}">
+                    <!-- Post Top Bar: Date and "Controls" -->
+                    <!-- FIND LATER: Change Controls -->
+                    <div class="postControls">
+                        <div class="date">
+                            {DayOfWeek}, {ShortMonth} {DayOfMonth}{DayOfMonthSuffix} @ {12Hour}:{Minutes}{CapitalAmPm} ヾ(๑ˊᵕˋ๑)◞♡
+                        </div>
+
+                        {block:IndexPage}
+                        <a class="fullControl" href="{Permalink}">
+                            <i class="fa-solid fa-expand"></i>
+                        </a>
+                        {/block:IndexPage}
+                        
+                        {block:PermalinkPage}
+                            <a class="closeControl" href="{BlogURL}">
+                                <i class="fas fa-times"></i>
+                            </a>
+                        {/block:PermalinkPage}
+                   
+                    </div>
+                    
+                    <div class="postInner">
+                        <div class="loaderTwo">
+                            <i class="fa-solid fa-cookie-bite fa-spin"></i>
+                        </div>
+
+                        <div class="postInnerTwo">
+                            <!-- TEXT POST -->
+                            {block:Text}
+                                <div class="text">
+                                    <!-- TEXT POST TITLE -->
+                                    {block:Title}
+                                        <h3 class="title">
+                                            <a href="{Permalink}">{Title}</a>
+                                        </h3>
+                                    {/block:Title}
+                                    <!-- TEXT POST BODY -->
+                                    {block:Body}
+                                        <div class="postContent">
+                                            {Body}
+                                        </div>
+                                    {/block:Body}
+                                </div>  
+                            {/block:Text}
+                            
+                            <!-- PHOTO POST -->
+                            {block:Photo}
+                                <div class="photo">
+                                    {block:IndexPage}
+                                        <a href="{Permalink}">
+                                    {/block:IndexPage}
+                                    {block:PermalinkPage}
+                                        {LinkOpenTag}
+                                    {/block:PermalinkPage}
+                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%"/> 
+                                    {block:IndexPage}
+                                        </a>
+                                    {/block:IndexPage}
+                                    {block:PermalinkPage}
+                                        {LinkCloseTag}
+                                    {/block:PermalinkPage}
+                                </div> 
+                            {/block:Photo}
+
+                            <!-- PANORAMA POST -->
+                            {block:Panorama}
+                                <div class="panorama">
+                                    {LinkOpenTag}
+                                        <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                                    {LinkCloseTag}
+                                </div> 
+                            {/block:Panorama}
+                            
+                            <!-- PHOTOSET POST -->
+                            {block:Photoset}
+                                <div class="photosetContainer">
+                                    {block:Photos}
+                                        {block:IndexPage}
+                                            <a href="{Permalink}">
+                                        {/block:IndexPage}
+                                        {block:PermalinkPage}
+                                            {LinkOpenTag}
+                                        {/block:PermalinkPage}
+                                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="100%"/>
+                                        {block:IndexPage}
+                                            </a>
+                                        {/block:IndexPage}
+                                        {block:PermalinkPage}
+                                            {LinkCloseTag}
+                                        {/block:PermalinkPage}
+                                    {/block:Photos}
+                                </div>
+                            {/block:Photoset}
+
+                            <!-- LINK POST -->
+                            {block:Link}
+                                <div class="link">
+                                    {block:Thumbnail}
+                                        {block:IndexPage}
+                                            <a href="{Permalink}">
+                                        {/block:IndexPage}
+                                        {block:PermalinkPage}
+                                            <a href="{URL}" class="link" {Target}>
+                                        {/block:PermalinkPage}
+                                        <img class="linkThumb" src="{Thumbnail-HighRes}" alt="{PhotoAlt}">
+                                            </a>
+                                    {/block:Thumbnail}
+                                    {block:Host}
+                                        <a class="linkHost" href="https://{host}">{Host}</a>
+                                    {/block:Host}
+                                    <a class="linkTitle" href="{URL}" class="link" {Target}>{Name}</a>
+                                </div>
+
+                                {block:PermalinkPage}
+                                    {block:Description}
+                                        <div class="postContent">
+                                            {Description}
+                                        </div>
+                                    {/block:Description}
+                                {/block:PermalinkPage}
+                                
+                                {block:IndexPage}
+                                    {block:Description}
+                                        <div class="postContent">
+                                            {Description}
+                                        </div>
+                                    {/block:Description}
+                                {/block:IndexPage}
+                            {/block:Link}
+                            
+                            <!-- CHAT POST -->
+                            {block:Chat}
+                                <div class="chat">
+                                    {block:Title}
+                                        <h3>{Title}</h3>
+                                    {/block:Title}
+                                    <ul id="chat">
+                                        {block:Lines}
+                                            <li class="{Alt} user_{UserNumber}">
+                                                {block:Label}
+                                                    <span class="label">{Label}</span>
+                                                {/block:Label}{Line}
+                                            </li>
+                                        {/block:Lines}
+                                    </ul>
+                                </div>
+                            {/block:Chat}
+                        
+                            <!-- AUDIO POST -->
+                            {block:Audio} 
+                                <div class="audio">
+                                    {block:AudioEmbed} 
+                                        {AudioEmbed}
+                                    {/block:AudioEmbed}
+                                </div>  
+                            {/block:Audio}
+                        
+                            <!-- Q&A POST -->
+                            {block:Answer}
+                                <div class="question">
+                                    <!-- QUESTION -->
+                                    <div class="questionContainer"> 
+                                        <span class="askerContainer">
+                                            {Asker} ASKED:
+                                        </span> 
+                                        {Question}
+                                    </div>
+                                    <!-- ANSWER -->
+                                    {block:Answerer}
+                                        <div class="answerContainer">
+                                            <span class="answererContainer">
+                                                {Answerer} ANSWERED:
+                                            </span >
+                                            {Answer}
+                                        </div>
+                                    {/block:Answerer}
+                                    <!-- REPLIES -->
+                                    <div class="replies">
+                                        {Replies}
+                                    </div> 
+                                </div>
+                            {/block:Answer}
+                        
+                            <!-- VIDEO POST -->
+                            {block:Video}
+                                <div class="video clearfix">
+                                    <div class="videoWrapper">
+                                        {VideoEmbed-700}
+                                    </div>
+                                </div>
+                            {/block:Video}
+                    
+                            <!-- QUOTE POST -->
+                            {block:Quote}
+                                <div class="quote">
+                                    <div class="postContent">
+                                        "{Quote}" {block:Source}— {Source}{/block:Source}
+                                    </div>
+                                </div>  
+                            {/block:Quote}
+                        
+                            <!-- PERMALINK -->
+                            {block:PermalinkPage}
+                                {block:Caption}
+                                    <div class="postContent">
+                                        {Caption}
+                                    </div>
+                                {/block:Caption}
+                            {/block:PermalinkPage}
+                        </div>
+                        <!-- END INNER POST TWO-->
+                    </div>
+                    <!-- END INNER POST -->
+                
+                    {block:IndexPage}
+                        {block:Caption}
+                            <div class="postContent">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                        
+                        {block:HasTags} 
+                            {block:IfTagsOnHomepage}
+                                <div class="tagContainer">
+                                    <ul class="tags">
+                                        {block:Tags}
+                                            <a href="{TagURL}">{Tag}</a> ♥ 
+                                        {/block:Tags}
+                                    </ul>
+                                </div>
+                            {/block:IfTagsOnHomepage}
+                        {/block:HasTags}
+                    
+                        {block:NoteCount}
+                            <div class="meta">
+                                <div class="notecount"> 
+                                    <a href="{Permalink}">
+                                        {NoteCountWithLabel}
+                                    </a>
+                                    ♡
+                                    <a href='{ReblogURL}'>Reblog</a>
+                                    ♡
+                                    <a href='{LikeURL}'>Like</a>
+                                </div>
+                            </div>
+                        {/block:NoteCount}
+                    {/block:IndexPage}
+                </li>
+                <!-- END POST MAIN -->
+           
+                <!-- <div class="notes-wrapper">
+                    {block:PostNotes}
+                        {PostNotes-64}
+                    {/block:PostNotes}
+                </div> -->
+                {block:PostNotes} 
+                    <li class="post notes">
+                        <div class="postControls">
+                            <div class="date">
+                                <a href="#">{NoteCountWithLabel}</a>
+                            </div>
+                            <a class="like-and-reblog"> 
+                                {ReblogButton} {LikeButton}
+                            </a>
+                        </div>
+                        <div class="postInner">
+                            <div id="note-page">
+                                <div class="note-container">
+                                    {PostNotes}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {/block:PostNotes} 
+            
+            {/block:Posts}
+            <!-- END POSTS BLOCK -->
+        </ul> 
+        <!-- END POSTS CONTAINER-->
+      
+        {block:Pagination}
+            <div class="pagination {block:IfInfiniteScroll}infinite{/block:IfInfiniteScroll}">
+                {block:PreviousPage}
+                    <a class="desktopLink" href="{PreviousPage}" id="prev">
+                        <i class="fa-regular fa-square-caret-left"></i>
+                        <p class="desktopTitle">Prev Posts</p>
+                    </a>
+                {/block:PreviousPage} 
+                
+                {block:NextPage}
+                    <a class="desktopLink" href="{NextPage}" id="next">
+                        <i class="fa-regular fa-square-caret-right"></i>
+                        <p class="desktopTitle">Next Posts</p>
+                    </a>
+                {/block:NextPage}
+        
+            </div>        
+        {/block:Pagination}
+
+        <!-- SCRIPTS FOR INDEX -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/2.0b2.120519/jquery.infinitescroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.js"></script>
+        <script src="https://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
+
+        {block:IndexPage}
+            <script type="text/javascript">
+                (function() {
+                    // Main content container
+                    var $container = $('.container');
+                    // Masonry + ImagesLoaded
+                    $container.imagesLoaded(function(){
+                        $container.masonry({
+                            itemSelector: 'li.post',
+                        });
+                    });
+                    $('#loading').delay(500).fadeOut(300);
+
+                    // Infinite Scroll
+                    $container.infinitescroll({
+                        navSelector  : ".pagination.infinite",
+                        nextSelector : "a#next",
+                        itemSelector : ".post.main",
+                        // finished message
+                        loading: {
+                            speed: 0,
+                            msgText: '( ⸝⸝•ᴗ•⸝⸝ )੭⁾⁾',
+                            finishedMsg: '',
+                        }
+                    },
+                    // Trigger Masonry as a callback
+                    function( newElements ) {
+                        // hide new items while they are loading
+                        var $newElems = $( newElements ).css({ opacity: '0' });
+                        $newElems.find('.postInnerTwo').css({ opacity: '0'});
+                        $newElems.find('.loaderTwo').css({ 'display': 'flex' });
+                        // ensure that images load before adding to masonry layout
+                        $newElems.imagesLoaded(function(){
+                            $newElems.each(function (i) {
+                                var $item = $(this); 
+                                setTimeout(function() { 
+                                    $item.animate({ opacity: 1 }, 0);
+                                    $item.find('.postInnerTwo').delay(500).animate({ opacity: 1 });          
+                                    $item.find('.loaderTwo').delay(500).fadeOut();
+                                }, 500*i);
+                            });
+                            
+                            $container.masonry( 'appended', $newElems, true );
+                        });
+                    });
+                })();
+            </script>
+            <!-- END JAVASCRIPT -->
+        {/block:IndexPage}
+        <!-- END INDEX PAGE -->
+
+    </body>
+    <!-- END BODY -->
+</html>
+<!-- END DOC -->
